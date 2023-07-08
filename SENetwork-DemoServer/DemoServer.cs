@@ -17,7 +17,10 @@ public class DemoServer: Server
             if (packet is DemoPacket demoPacket)
             {
                 Console.WriteLine($"DEMO PACKED RECIEVED : {demoPacket.Info}");
-                BroadcastPacket(new Demo2Packet());
+                BroadcastPacket(new Demo2Packet
+                {
+                    Info = "Server Info"
+                });
             }
         };
         

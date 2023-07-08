@@ -13,7 +13,10 @@ public class DemoClient: Client
         PeerConnected += () =>
         {
             Console.WriteLine("CONNECTED, SEND PACKET...");
-            SendPacket(new DemoPacket());
+            SendPacket(new DemoPacket
+            {
+                Info = "Client Info"
+            });
         };
         
         PacketRecieved += packet =>
