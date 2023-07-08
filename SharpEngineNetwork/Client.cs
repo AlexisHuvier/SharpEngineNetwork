@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Sockets;
 using LiteNetLib;
 using LiteNetLib.Utils;
+using Microsoft.CSharp.RuntimeBinder;
 
 namespace SharpEngineNetwork;
 
@@ -46,8 +47,12 @@ public class Client
             
             var numberProp = reader.GetInt();
             dynamic? packet = Activator.CreateInstance(type);
-            if(packet == null)
-                throw new UnknownPacketException($"Packet : {packetType}");
+            try
+            {
+                if (packet == null)
+                    throw new UnknownPacketException($"Packet : {packetType}");
+            }
+            catch(RuntimeBinderException) {}
                     
             for (var i = 0; i < numberProp; i++)
             {
