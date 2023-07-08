@@ -21,5 +21,9 @@ public class DemoClient: Client
             if (packet is Demo2Packet)
                 Console.WriteLine("DEMO 2 PACKED RECIEVED");
         };
+
+        ErrorReceived += (point, error) => Console.WriteLine($"Error from {point} : {error}");
+
+        PeerDisconnected += (peer, info) => Console.WriteLine($"OMG Disconnected from {peer.EndPoint} : {info.Reason}");
     }
 }
