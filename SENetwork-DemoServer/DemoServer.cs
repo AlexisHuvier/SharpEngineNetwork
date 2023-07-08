@@ -14,9 +14,9 @@ public class DemoServer: Server
 
         PacketRecieved += (peer, packet) =>
         {
-            if (packet is DemoPacket)
+            if (packet is DemoPacket demoPacket)
             {
-                Console.WriteLine("DEMO PACKED RECIEVED");
+                Console.WriteLine($"DEMO PACKED RECIEVED : {demoPacket.Info}");
                 BroadcastPacket(new Demo2Packet());
             }
         };

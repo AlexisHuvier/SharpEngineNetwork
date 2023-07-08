@@ -18,8 +18,8 @@ public class DemoClient: Client
         
         PacketRecieved += packet =>
         {
-            if (packet is Demo2Packet)
-                Console.WriteLine("DEMO 2 PACKED RECIEVED");
+            if (packet is Demo2Packet demo2Packet)
+                Console.WriteLine($"DEMO 2 PACKED RECIEVED : {demo2Packet.Info}");
         };
 
         ErrorReceived += (point, error) => Console.WriteLine($"Error from {point} : {error}");
