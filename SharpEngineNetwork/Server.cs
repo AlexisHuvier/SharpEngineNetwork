@@ -1,3 +1,5 @@
+using System.Net;
+using System.Net.Sockets;
 using LiteNetLib;
 using LiteNetLib.Utils;
 
@@ -10,6 +12,7 @@ public class Server
     public delegate void PeerConnection(NetPeer peer);
     public delegate void PeerDisconnection(NetPeer peer, DisconnectInfo info);
     public delegate void UpdateHandler();
+    public delegate void NetworkError(IPEndPoint endPoint, SocketError error);
     
     public readonly List<Type> PacketTypes = new();
     private readonly EventBasedNetListener _listener = new();
@@ -19,6 +22,7 @@ public class Server
     public event PeerDisconnection PeerDisconnected;
     public event RecievePacket PacketRecieved;
     public event UpdateHandler Update;
+    public event NetworkError ErrorReceived;
 
     public Server(int port, string key = "")
     {
@@ -29,6 +33,7 @@ public class Server
         _listener.PeerConnectedEvent += peer => PeerConnected?.Invoke(peer);
         _listener.PeerDisconnectedEvent += (peer, info) => PeerDisconnected?.Invoke(peer, info);
         _listener.NetworkReceiveEvent += NetworkReceive;
+        _listener.NetworkErrorEvent += (point, error) => ErrorReceived?.Invoke(point, error);
     }
 
     private void NetworkReceive(NetPeer peer, NetPacketReader reader, byte channel, DeliveryMethod deliverymethod)
