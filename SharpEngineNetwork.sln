@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpEngineNetwork", "SharpEngineNetwork\SharpEngineNetwork.csproj", "{DB05FB0C-9DA4-49CB-A862-2B9DAED41BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENetwork-DemoClient", "SENetwork-DemoClient\SENetwork-DemoClient.csproj", "{53CC78A1-4088-4D32-A771-43C9F5690E3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENetwork-DemoServer", "SENetwork-DemoServer\SENetwork-DemoServer.csproj", "{FBE53FC2-F29F-4940-99A6-DFD16E107847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB05FB0C-9DA4-49CB-A862-2B9DAED41BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB05FB0C-9DA4-49CB-A862-2B9DAED41BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB05FB0C-9DA4-49CB-A862-2B9DAED41BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB05FB0C-9DA4-49CB-A862-2B9DAED41BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53CC78A1-4088-4D32-A771-43C9F5690E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CC78A1-4088-4D32-A771-43C9F5690E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CC78A1-4088-4D32-A771-43C9F5690E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CC78A1-4088-4D32-A771-43C9F5690E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

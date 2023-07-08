@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Authors>LavaPower</Authors>
+        <Description>Little Network Librarie</Description>
+        <Copyright>Copyright (c) LavaPower 2021-2023</Copyright>
+        <PackageProjectUrl>https://github.com/AlexisHuvier/SharpEngineNetwork</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/AlexisHuvier/SharpEngineNetwork</RepositoryUrl>
+        <EnablePackageValisation>true</EnablePackageValisation>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Engine,Network</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LiteNetLib" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+</Project>
