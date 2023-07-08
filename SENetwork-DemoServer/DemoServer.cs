@@ -1,4 +1,5 @@
-using SENetwork_DemoServer.Packet;
+using SENetwork_DemoCommon;
+using SENetwork_DemoCommon.Packet;
 using SharpEngineNetwork;
 
 namespace SENetwork_DemoServer;
@@ -7,8 +8,7 @@ public class DemoServer: Server
 {
     public DemoServer() : base(5000, "DEMO-KEY")
     {
-        PacketTypes.Add(typeof(DemoPacket));
-        PacketTypes.Add(typeof(Demo2Packet));
+        this.AddPackets();
 
         PeerConnected += peer => Console.WriteLine($"CONNECTION : {peer.EndPoint}");
 

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENetwork-DemoClient", "SEN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENetwork-DemoServer", "SENetwork-DemoServer\SENetwork-DemoServer.csproj", "{FBE53FC2-F29F-4940-99A6-DFD16E107847}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENetwork-DemoCommon", "SENetwork-DemoCommon\SENetwork-DemoCommon.csproj", "{521446F0-BC22-4B49-A0BD-85C6DD4B97B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBE53FC2-F29F-4940-99A6-DFD16E107847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{521446F0-BC22-4B49-A0BD-85C6DD4B97B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521446F0-BC22-4B49-A0BD-85C6DD4B97B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521446F0-BC22-4B49-A0BD-85C6DD4B97B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521446F0-BC22-4B49-A0BD-85C6DD4B97B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
