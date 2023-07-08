@@ -19,3 +19,8 @@ public class UnknownPropertyException : Exception
 {
     public UnknownPropertyException(string? message): base(message) {}
 }
+
+public class UnknownFieldException : Exception
+{
+    public UnknownFieldException(string? message): base(message) {}
+}

@@ -24,44 +24,51 @@ public static class Common
             var prop = type.GetProperty(propName);
             if (prop == null)
                 throw new UnknownPropertyException($"Property : {propName} - Packet : {packetType}");
+
+            object packetObj = packet!;
                 
             #region Basic Type
     
             if (prop.PropertyType == typeof(string))
-                prop.SetValue(packet, reader.GetString());
+                prop.SetValue(packetObj, reader.GetString());
             else if(prop.PropertyType == typeof(int))
-                prop.SetValue(packet, reader.GetInt());
+                prop.SetValue(packetObj, reader.GetInt());
             else if(prop.PropertyType == typeof(short))
-                prop.SetValue(packet, reader.GetShort());
+                prop.SetValue(packetObj, reader.GetShort());
             else if(prop.PropertyType == typeof(byte))
-                prop.SetValue(packet, reader.GetByte());
+                prop.SetValue(packetObj, reader.GetByte());
             else if(prop.PropertyType == typeof(char))
-                prop.SetValue(packet, reader.GetChar());
+                prop.SetValue(packetObj, reader.GetChar());
             else if(prop.PropertyType == typeof(float))
-                prop.SetValue(packet, reader.GetFloat());
+                prop.SetValue(packetObj, reader.GetFloat());
             else if(prop.PropertyType == typeof(double))
-                prop.SetValue(packet, reader.GetDouble());
+                prop.SetValue(packetObj, reader.GetDouble());
             else if(prop.PropertyType == typeof(bool))
-                prop.SetValue(packet, reader.GetBool());
+                prop.SetValue(packetObj, reader.GetBool());
 
             #endregion
 
             #region Array Type
     
             else if (prop.PropertyType == typeof(string[]))
-                prop.SetValue(packet, reader.GetStringArray());
+                prop.SetValue(packetObj, reader.GetStringArray());
             else if(prop.PropertyType == typeof(int[]))
-                prop.SetValue(packet, reader.GetIntArray());
+                prop.SetValue(packetObj, reader.GetIntArray());
             else if(prop.PropertyType == typeof(short[]))
-                prop.SetValue(packet, reader.GetShortArray());
+                prop.SetValue(packetObj, reader.GetShortArray());
             else if(prop.PropertyType == typeof(float[]))
-                prop.SetValue(packet, reader.GetFloatArray());
+                prop.SetValue(packetObj, reader.GetFloatArray());
             else if(prop.PropertyType == typeof(double[]))
-                prop.SetValue(packet, reader.GetDoubleArray());
+                prop.SetValue(packetObj, reader.GetDoubleArray());
             else if (prop.PropertyType == typeof(bool[]))
-                prop.SetValue(packet, reader.GetBoolArray());
+                prop.SetValue(packetObj, reader.GetBoolArray());
 
             #endregion
+            
+            else
+                throw new UnknownPropertyTypeException($"Type : {prop.PropertyType.Name}");
+
+            packet = packetObj;
         }
                         
         for (var i = 0; i < numberField; i++)
@@ -69,45 +76,52 @@ public static class Common
             var fieldName = reader.GetString();
             var field = type.GetField(fieldName);
             if (field == null)
-                throw new UnknownPropertyException($"Field : {fieldName} - Packet : {packetType}");
+                throw new UnknownFieldException($"Field : {fieldName} - Packet : {packetType}");
                 
+            object packetObj = packet!;
+            
             #region Basic Type
     
             if (field.FieldType == typeof(string))
-                field.SetValue(packet, reader.GetString());
+                field.SetValue(packetObj, reader.GetString());
             else if(field.FieldType == typeof(int))
-                field.SetValue(packet, reader.GetInt());
+                field.SetValue(packetObj, reader.GetInt());
             else if(field.FieldType == typeof(short))
-                field.SetValue(packet, reader.GetShort());
+                field.SetValue(packetObj, reader.GetShort());
             else if(field.FieldType == typeof(byte))
-                field.SetValue(packet, reader.GetByte());
+                field.SetValue(packetObj, reader.GetByte());
             else if(field.FieldType == typeof(char))
-                field.SetValue(packet, reader.GetChar());
+                field.SetValue(packetObj, reader.GetChar());
             else if(field.FieldType == typeof(float))
-                field.SetValue(packet, reader.GetFloat());
+                field.SetValue(packetObj, reader.GetFloat());
             else if(field.FieldType == typeof(double))
-                field.SetValue(packet, reader.GetDouble());
+                field.SetValue(packetObj, reader.GetDouble());
             else if(field.FieldType == typeof(bool))
-                field.SetValue(packet, reader.GetBool());
+                field.SetValue(packetObj, reader.GetBool());
 
             #endregion
 
             #region Array Type
     
             else if (field.FieldType == typeof(string[]))
-                field.SetValue(packet, reader.GetStringArray());
+                field.SetValue(packetObj, reader.GetStringArray());
             else if(field.FieldType == typeof(int[]))
-                field.SetValue(packet, reader.GetIntArray());
+                field.SetValue(packetObj, reader.GetIntArray());
             else if(field.FieldType == typeof(short[]))
-                field.SetValue(packet, reader.GetShortArray());
+                field.SetValue(packetObj, reader.GetShortArray());
             else if(field.FieldType == typeof(float[]))
-                field.SetValue(packet, reader.GetFloatArray());
+                field.SetValue(packetObj, reader.GetFloatArray());
             else if(field.FieldType == typeof(double[]))
-                field.SetValue(packet, reader.GetDoubleArray());
+                field.SetValue(packetObj, reader.GetDoubleArray());
             else if (field.FieldType == typeof(bool[]))
-                field.SetValue(packet, reader.GetBoolArray());
+                field.SetValue(packetObj, reader.GetBoolArray());
 
             #endregion
+            
+            else
+                throw new UnknownFieldTypeException($"Type : {field.FieldType.Name}");
+            
+            packet = packetObj;
         }
 
         return packet!;
