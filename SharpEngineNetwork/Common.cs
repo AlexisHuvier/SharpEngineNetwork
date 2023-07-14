@@ -129,7 +129,7 @@ public static class Common
     
     public static void SendPacket<T>(NetPeer peer, T packet) where T: notnull
     {
-        var writer = new NetDataWriter();
+        var writer = new NetDataWriter(true, 256);
         
         var properties = packet.GetType().GetProperties();
         var fields = packet.GetType().GetFields();
